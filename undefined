@@ -1,0 +1,19 @@
+```scala
+class MyClass(val x: Int) {
+  def this() = this(0)
+  override def toString(): String = x.toString
+}
+
+object Main extends App {
+  val myInstance = new MyClass()
+  println(myInstance.x) // this prints 0 as expected
+
+  val myInstance2 = new MyClass(5)
+  println(myInstance2.x) // this prints 5 as expected
+
+  //Here is the corrected part
+  val list = List(new MyClass(), new MyClass(1))
+
+  list.foreach(println) // this will now print 0 and 1 as expected
+}
+```
